@@ -1,19 +1,5 @@
 <head>
     <style>
-        input:-webkit-autofill, 
-input:-webkit-autofill:hover,  
-input:-webkit-autofill:focus,
-input:-webkit-autofill:visited, 
-input:-webkit-autofill:link, 
-input:-webkit-autofill:active  { 
-    transition: background-color 5000s ease-in-out 0s; 
-    -webkit-text-fill-color: #5a318d !important;
-    -webkit-font-size: 1rem !important;
-    font-size: 1rem !important;
-  }
-  .mt-4{
-    font-size: 1rem !important;
-  }
     </style>
 </head>
 <x-header>
@@ -60,11 +46,11 @@ input:-webkit-autofill:active  {
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a style="color: #5a318d;" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+            <a style="color: #ffa500;" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
                 {{ __('Уже зарегестрированы?') }}
             </a>
 
-            <x-primary-button class="ms-4" style="background-color: #5a318d;">
+            <x-primary-button class="ms-4" style="background-color: #ffa500">
                 {{ __('Регистрация') }}
             </x-primary-button>
         </div>

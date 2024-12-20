@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\MyController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\AnimeController;
+use App\Http\Controllers\AnimeVideosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/welcome', function () {
@@ -12,6 +15,9 @@ Route::get('/welcome', function () {
 Route::get('/catalog', function () {
     return view('catalog');
 });
+// Route::get('/anime', function () {
+//     return view('anime');
+// });
 
 
 Route::get('/dashboard', function () {
@@ -26,5 +32,9 @@ Route::middleware('auth')->group(function () {
 
 // Route::get('/catalog', [GenreController::class, 'index'])->name('сatalog');
 Route::get('/catalog', [CatalogController::class, 'index'])->name('сatalog');
+Route::get('/catalog', [MyController::class, 'index']);
+Route::get('/anime/{id}', [AnimeController::class, 'show'])->name('anime');
+// Route::get('/anime/{id}', [AnimeVideosController::class, 'show'])->name('anime');
+// Route::get('/anime/{id}', 'AnimeController@show')->name('anime.show');
 // Route::get('images/{image}', 'ImageController@show')->name('image.show');
 require __DIR__.'/auth.php';

@@ -25,95 +25,23 @@
                 justify-content: center;
                 align-items: center;
             }
-.main__search form {
-  width: auto;
-  float: right;
-  margin-top: 30px;
-  border-radius: 42px;
-}
-.main__search input {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    width: 740px;
-    padding-left: 15px;
-    border: 0px;
-    color: #5a318d;
-    outline: none;
-}
-.form__main__search{
-    display: flex;
-    width: 800px;
-  height: 42px;
-  padding-left: 15px;
-  border: 2px solid grey;
-  background: white;
-  color: #5a318d;
-  outline: none;
-  position: relative;
-}
-.main__search button {
-}
-a:hover{
-    color: #701ADB;
-}
+
 header{
-    background-color: #5a318d;
+    background-color: #ffa500;
   }
   .mt-4 input label{
     font-size: 100%;
-    color: #5a318d;
+    color: #ffa500;
   }
   #remember_me:checked{
-    color: #5a318d;
+    color: #ffa500;
   }
-  main{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-.main__search form {
-  width: auto;
-  float: right;
-  margin-top: 30px;
-  border-radius: 42px;
-}
-.main__search input {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    width: 740px;
-    padding-left: 15px;
-    border: 0px;
-    color: #5a318d;
-    outline: none;
-}
-.form__main__search{
-    display: flex;
-    width: 800px;
-  height: 42px;
-  padding-left: 15px;
-  border: 2px solid #5a318d;
-  background: white;
-  color: #5a318d;
-  outline: none;
-  position: relative;
-}
-.main__search button {
-}
-a:hover{
-    color: #701ADB;
-}
-header{
-    background-color: #5a318d;
-  }
-  ::placeholder { color: #5a318d; }
+  ::placeholder { color: #ffa500; }
   ::-webkit-input-placeholder{
-    color: #5a318d;
+    color: #ffa500;
   }
   ::-ms-input-placeholder{
-    color: #5a318d;
+    color: #ffa500;
   }
             /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*, a{transition:1s; color:white;
   font-optical-sizing: auto;
@@ -125,14 +53,12 @@ header{
     </head>
 
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-    <header class="" style="padding: 20px; display: flex; align-items: center;">
+    <header class="" style="background-color:#ffa500; padding: 20px; display: flex; align-items: center;">
         <div class="header__wrap" style="display:flex; width: 100%; height:30px;">
-            <a class="logo" style="cursor:pointer; margin-left: 30px; width: 130px;"><img src="images/hikki media full logo.png" alt="" style=""></a>
+            <div class="logo"><a class="logo" style="cursor:pointer; margin-left: 30px; width: 130px;">ONLINE FILMS</a></div>
 
       <ul class="menu" style="display: flex; flex: 1 1 0%; margin-left: 30px">
-        <li><a href="{{url('/welcome')}}" class="nav-text px-2">Главная</a></li>
         <li><a href="{{url('/catalog')}}" class="nav-text px-2">Каталог</a></li>
-        <li><a href="#" class="nav-text px-2">Команда</a></li>
       </ul>
 
         <div class="button_login" style="margin-right: 30px">

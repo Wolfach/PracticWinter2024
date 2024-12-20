@@ -21,7 +21,7 @@
       
     }
     .line{
-      justify-content: space-between;
+      justify-content: left;
     flex-wrap: wrap;
       width: 100%;
       display: flex;
@@ -29,14 +29,13 @@
     }
     .posterblock{
       margin-top:10px;
+      margin-left: 25px;
     }
-    /* .posterblock:first-child{
-      margin-left: 0px;
+    .container{
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
     }
-    .posterblock:last-child{
-      margin-left: 0px;
-    } */
-
     .info-max__episodes{
     }
     .posterblock .info-min{
@@ -59,7 +58,7 @@
       overflow: none;
     }
     .top:hover .info-max{
-      background: rgba(90, 49, 141, 0.8);
+      background: rgba(255, 165, 0, 0.8);
     }
     .info-max{
       z-index: 2;
@@ -82,11 +81,6 @@
     .info-min span{
       margin-left: 5px
     }
-    /* .play{
-      background:url(../images/play.png);
-      width: 90px;
-      height: 80px;
-    } */
     .top:hover .play{
       opacity: 1;
     }
@@ -115,6 +109,20 @@
       width: 250px;
       height: 354px;
     }
+    .posterblock__primary-text{
+      text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 250px;
+  color: black;
+    }
+    .posterblock__genres-genre{
+       text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 250px;
+  color: gray;
+    }
     .posterblock__second-text{
       text-overflow: ellipsis;
   white-space: nowrap;
@@ -128,49 +136,21 @@
   overflow: hidden;
   width: 250px;
   color: #5a318d;
-    }
-    /* .posterblock:hover .posterblock__img{
-      background: linear-gradient(white, #5a318d);
-      opacity: 0.6;
-
-    }
-    .posterblock:hover .info-max__block{
-      display: flex;
-    } */
+}
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
   </style>
 </head>
 <x-header>
 </x-header>
 <main>
-        <section class="start__video">
-                <video class="vid" autoplay muted loop src="video/opening fire force.mp4"></video>
-        </section>
-    <div class="main__search">
-<form>
-    <div class="form__main__search">
-  <input type="main__search__text" placeholder="Поиск аниме...">
-  <button class="button-search" style="border: 0;"><img style="width: 24px" src="images/search.png" alt=""></button>
-  </div>
-</form>
-</div>
 <div class="container">
   <div class="line">
-    @foreach($animedesc as $animeelement)
+    @foreach($posters as $animeelement)
     <div class="posterblock" style="">
       <div class="top">
-        <div class="info-min">
-            <a href=""><span>{{$animeelement->Status}}</span></a>
-            <a href=""><span>{{$animeelement->Year}}</span></a>
-            <span>{{$animeelement->Age_limit}}</span>
-        </div>
+
         <a href="" class="info-max">
           <div class="info-max__block">
-            <div class="episodes">
-              <span class="info-max__episodes">Эпизоды</span>
-              <span>{{$animeelement->Episodes}}</span>
-              </div>
-              <div class="play"><img src="images/play.png" alt=""></div>
           </div>
         </a>
           <a href="">
@@ -179,15 +159,30 @@
         </div>
         <div class="bottom">
       <div class="posterblock__primary-text"><a href="" style="color: black; text-transform: uppercase;" class="Ru-title">{{$animeelement->RU_Title}}</a></div>
-      <div class="posterblock__second-text"><a href="" style="color: #5a318d; font-size: 15px; text-transform: uppercase;" class="Romanji-title">{{$animeelement->Romanji_Title}}</a></div>
-      @foreach($animegenres as $animegenre)
-        <div class="posterblock__genres" style="display: flex; flex-direction: row;">
-          <a href="">{{$animegenre->Genre}}</a>
+      <div class="posterblock__second-text"><a href="" style="color: #ffa500; font-size: 15px; text-transform: uppercase;" class="Romanji-title">{{$animeelement->Romanji_Title}}</a></div>
+      <div class="posteblock__genres" style="display: flex; flex-direction: row; color: gray;">
+        @foreach($animeelement->genres as $animegenre)
+        <?php
+                        $maxGenresToShow = 4;
+                        $genreCount = count($animeelement->genres);
+                        $genres = $animeelement->genres->slice(0, $maxGenresToShow);
+
+                        $genresString = $genres->implode('Genre', ', ');
+
+                        if ($genreCount > $maxGenresToShow) {
+                            $genresString .= '...';
+                        }
+                    ?>
+                    @endforeach
+                    <div class="posterblock__genres-genre" style="">
+                        <a style="color: gray; font-size: 15px;" href="">{{ $genresString }}</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      @endforeach
-      </div>
+        @endforeach
     </div>
-    @endforeach
-  </div>
 </div>
-    </main>
+</div>
+</div>
+</main>

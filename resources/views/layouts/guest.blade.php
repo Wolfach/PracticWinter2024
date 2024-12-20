@@ -16,10 +16,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:visited, 
 input:-webkit-autofill:link, 
 input:-webkit-autofill:active  { 
-    transition: background-color 5000s ease-in-out 0s; 
-    -webkit-text-fill-color: #5a318d !important;
-    -webkit-font-size: 1rem !important;
-    font-size: 1rem !important;
+    -webkit-text-fill-color: #ffa500 !important;
   }
   .mt-4{
     font-size: 1rem !important;
@@ -59,19 +56,7 @@ input:-webkit-autofill:active  {
 }
 .main__search button {
 }
-a:hover{
-    color: #701ADB;
-}
-header{
-    background-color: #5a318d;
-  }
-  ::placeholder { color: #5a318d; }
-  ::-webkit-input-placeholder{
-    color: #5a318d;
-  }
-  ::-ms-input-placeholder{
-    color: #5a318d;
-  }
+
     </style>
 </head>
 
