@@ -12,7 +12,7 @@ class Genres extends Model
 
     protected $table = 'genres';
     protected $fillable = [
-         'Genre',
+         'genre',
     ];
 
     public function anime()
