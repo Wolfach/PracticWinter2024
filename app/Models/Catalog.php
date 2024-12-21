@@ -12,19 +12,9 @@ class Catalog extends Model
     
     protected $table = 'anime';
     protected $fillable = [
-        'RU_Title',
-        'Romanji_Title',
-        'Poster',
-        'Description',
-        'Status',
-        'Type',
-        'Year',
-        'Age_limit',
-        'Studio',
-        'Genres',
-        'Episodes',
-        'Dubbers',
-        'Timer',
+        'ru_title',
+        'romanji_title',
+        'poster',
     ];
 
 
